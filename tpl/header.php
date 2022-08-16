@@ -22,7 +22,7 @@
     <header>
         <nav class="navbar navbar-expand-md navbar-dark bg-info" aria-label="Fourth navbar example">
             <div class="container-fluid">
-                <a class="navbar-brand" href="#">Expand at md</a>
+                <a class="navbar-brand" href="#"><?php LOGO; ?></a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample04" aria-controls="navbarsExample04" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -30,15 +30,32 @@
                 <div class="collapse navbar-collapse" id="navbarsExample04">
                     <ul class="navbar-nav me-auto mb-2 mb-md-0">
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#">Home</a>
+                            <a class="nav-link active" aria-current="page" href="#">About</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Link</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link disabled">Disabled</a>
+                            <a class="nav-link" href="#">Blog</a>
                         </li>
 
+
+
+                    </ul>
+                    <ul class="navbar-nav ms-auto mb-2 mb-md-0">
+                        <?php if (isset($_SESSION["user_id"])) : ?>
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="#">Sign-in</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Sign-up</a>
+                            </li>
+                        <?php else : ?>
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="#">Sign-in</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Sign-up</a>
+                            </li>
+
+                        <?php endif; ?>
 
                     </ul>
 
